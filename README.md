@@ -1,18 +1,10 @@
 # pomodoro-userscript
 
-> This template is based on [Vite](https://vitejs.dev) and [vite-userscript-plugin](https://github.com/crashmax-dev/vite-userscript-plugin)
+> This template is based on [Vite](https://vitejs.dev) and [vite-userscript-plugin](https://github.com/greasify/vite-userscript-plugin)
 
 ### Install Userscript
 
-> [pomodoro-userscript.user.js](https://crashmax-dev.github.io/pomodoro-userscript/pomodoro-userscript.user.js)
-
-## Branches
-
-- [master](https://github.com/crashmax-dev/pomodoro-userscript)
-- [jsx](https://github.com/crashmax-dev/pomodoro-userscript/tree/jsx)
-- [reatom](https://github.com/crashmax-dev/pomodoro-userscript/tree/reatom)
-- [imba](https://github.com/crashmax-dev/pomodoro-userscript/tree/imba)
-- [preact](https://github.com/crashmax-dev/pomodoro-userscript/tree/preact)
+> [pomodoro-userscript.user.js](https://greasify.github.io/pomodoro-userscript/pomodoro-userscript.user.js)
 
 ## Development
 

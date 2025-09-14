@@ -3,8 +3,10 @@ import { events } from './libs/events.js'
 import { DraggableOverlay } from './ui/draggable-overlay.js'
 import { TimerInput } from './ui/timer-input.js'
 import { Widget } from './ui/widget.js'
-import './styles/global.scss'
-import { StorageData, store } from './libs/storage.js'
+import { store, type StorageData } from './libs/storage.js'
+
+import styles from './styles/global.scss?raw'
+GM_addStyle(styles)
 
 class App {
   private readonly timer: TimerInput

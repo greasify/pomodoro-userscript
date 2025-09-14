@@ -40,7 +40,7 @@ class Storage {
   )
 
   get data() {
-    return this.storage.values
+    return this.storage.value
   }
 
   getByKey<T extends keyof StorageData>(key: T): StorageData[T] {
