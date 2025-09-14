@@ -3,10 +3,10 @@
 // @version     0.0.1
 // @author      crashmax <userscript@crashmax.ru>
 // @license     MIT
-// @homepage    https://crashmax-dev.github.io/pomodoro-userscript/
+// @homepage    https://greasify.github.io/pomodoro-userscript/
 // @match       http://localhost:3000
-// @match       https://example.com
+// @match       *
 // @grant       GM_addStyle
-// @updateURL   https://crashmax-dev.github.io/pomodoro-userscript/pomodoro-userscript.meta.js
-// @downloadURL https://crashmax-dev.github.io/pomodoro-userscript/pomodoro-userscript.user.js
+// @updateURL   https://greasify.github.io/pomodoro-userscript/pomodoro-userscript.meta.js
+// @downloadURL https://greasify.github.io/pomodoro-userscript/pomodoro-userscript.user.js
 // ==/UserScript==
