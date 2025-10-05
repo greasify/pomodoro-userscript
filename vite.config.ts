@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import Userscript from 'vite-userscript-plugin'
-import { name, version, homepage, license, author } from './package.json'
+import { author, homepage, license, name, version } from './package.json'
 
-export default defineConfig((config) => {
+export default defineConfig((_config) => {
   return {
     plugins: [
       Userscript({
@@ -15,13 +15,13 @@ export default defineConfig((config) => {
           homepage,
           match: [
             'http://localhost:3000',
-            '*'
-          ]
+            '*',
+          ],
         },
         server: {
-          port: 3000
-        }
-      })
-    ]
+          port: 3000,
+        },
+      }),
+    ],
   }
 })

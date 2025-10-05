@@ -2,6 +2,7 @@ import { el } from '@zero-dependency/dom'
 import { Interact } from '@zero-dependency/interact'
 import { store } from '../libs/storage.js'
 import { PomodoroWidget } from './pomodoro-widget.js'
+
 export class DraggableOverlay {
   el: HTMLElement
 
@@ -26,7 +27,7 @@ export class DraggableOverlay {
       onMouseMove: (el) => {
         const { x, y } = el.getBoundingClientRect()
         store.write((prevValue) => ({ ...prevValue, position: { x, y } }))
-      }
+      },
     })
 
     this.updatePosition()

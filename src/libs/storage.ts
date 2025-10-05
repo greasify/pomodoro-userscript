@@ -23,22 +23,22 @@ class Storage {
   private readonly initialData: StorageData = {
     time: {
       minutes: 0,
-      seconds: 0
+      seconds: 0,
     },
     onTickTime: {
       minutes: 0,
-      seconds: 0
+      seconds: 0,
     },
     isRunning: false,
     position: {
       x: 0,
-      y: 0
-    }
+      y: 0,
+    },
   }
 
   private readonly storage = new LocalStorage<StorageData>(
     POMODORO_STORAGE_KEY,
-    this.initialData
+    this.initialData,
   )
 
   get data() {

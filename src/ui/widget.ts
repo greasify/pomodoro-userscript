@@ -1,6 +1,6 @@
 import { el } from '@zero-dependency/dom'
-import { DraggableOverlay } from './draggable-overlay.js'
-import { TimerInput } from './timer-input.js'
+import type { DraggableOverlay } from './draggable-overlay.js'
+import type { TimerInput } from './timer-input.js'
 
 export class Widget {
   el: HTMLDivElement
@@ -30,9 +30,9 @@ export class Widget {
         },
         oncontextmenu: (event: Event) => {
           event.preventDefault()
-        }
+        },
       },
-      this.container
+      this.container,
     )
   }
 }

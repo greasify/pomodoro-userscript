@@ -1,7 +1,7 @@
 import { el } from '@zero-dependency/dom'
+import { addZero } from '@zero-dependency/utils'
 import { events } from '../libs/events.js'
 import { store } from '../libs/storage.js'
-import { addZero } from '@zero-dependency/utils'
 import type { Time } from '../libs/storage.js'
 
 const inputs = ['minutes', 'seconds'] as const
@@ -19,15 +19,15 @@ export class TimerInput {
 
   get inputData() {
     return {
-      type: this.currentInput.dataset['type']! as InputType,
-      time: this.currentInput.textContent!
+      type: this.currentInput.dataset.type! as InputType,
+      time: this.currentInput.textContent!,
     }
   }
 
   mount(): void {
     for (const inputName of inputs) {
       const input = el('div', { contentEditable: 'true' })
-      input.dataset['type'] = inputName
+      input.dataset.type = inputName
 
       input.addEventListener('keydown', (event) => this.onKeyDown(event))
       input.addEventListener('click', (event) => {
@@ -66,14 +66,14 @@ export class TimerInput {
         this.incrementInputValue(event.key === 'ArrowUp' ? 1 : -1)
         break
       default:
-        if (Number.isNaN(parseInt(event.key))) return
+        if (Number.isNaN(Number.parseInt(event.key))) return
         this.changeInputValue(event.key)
     }
   }
 
   private navigateInput(): void {
-    const nextInput = (this.currentInput.nextElementSibling ??
-      this.currentInput.previousElementSibling) as HTMLDivElement
+    const nextInput = (this.currentInput.nextElementSibling
+      ?? this.currentInput.previousElementSibling) as HTMLDivElement
 
     this.focusInput(nextInput)
   }
@@ -99,7 +99,7 @@ export class TimerInput {
     this[type].textContent = addZero(value)
     store.write((prevValue) => ({
       ...prevValue,
-      time: { ...prevValue.time, [type]: value }
+      time: { ...prevValue.time, [type]: value },
     }))
   }
 
@@ -108,7 +108,7 @@ export class TimerInput {
   }
 
   private parseTime(type: InputType, time: string, inc: number = 0): number {
-    let parsedTime = parseInt(time) + inc
+    let parsedTime = Number.parseInt(time) + inc
 
     switch (type) {
       case 'minutes':
@@ -127,14 +127,14 @@ export class TimerInput {
   updateInputValues(onTickTime?: Time): void {
     const time = store.getByKey('time')
     this.minutes.textContent = addZero(
-      onTickTime ? onTickTime.minutes : time.minutes
+      onTickTime ? onTickTime.minutes : time.minutes,
     )
     this.seconds.textContent = addZero(
-      onTickTime ? onTickTime.seconds : time.seconds
+      onTickTime ? onTickTime.seconds : time.seconds,
     )
 
     if (onTickTime) {
-      store.write((prevValue) => ({ ...prevValue, onTickTime: onTickTime }))
+      store.write((prevValue) => ({ ...prevValue, onTickTime }))
     }
   }
 }

@@ -1,9 +1,10 @@
 import { Countdown } from './features/countdown.js'
 import { events } from './libs/events.js'
+import { POMODORO_STORAGE_KEY, store } from './libs/storage.js'
 import { DraggableOverlay } from './ui/draggable-overlay.js'
 import { TimerInput } from './ui/timer-input.js'
 import { Widget } from './ui/widget.js'
-import { POMODORO_STORAGE_KEY, store, type StorageData } from './libs/storage.js'
+import type { StorageData } from './libs/storage.js'
 
 class App {
   private readonly timer: TimerInput
