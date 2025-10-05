@@ -6,7 +6,6 @@
 // @homepage    https://greasify.github.io/pomodoro-userscript/
 // @match       http://localhost:3000
 // @match       *
-// @grant       GM_addStyle
 // @updateURL   https://greasify.github.io/pomodoro-userscript/pomodoro-userscript.meta.js
 // @downloadURL https://greasify.github.io/pomodoro-userscript/pomodoro-userscript.user.js
 // ==/UserScript==
