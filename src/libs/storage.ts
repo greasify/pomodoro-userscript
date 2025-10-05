@@ -1,5 +1,7 @@
 import { LocalStorage } from '@zero-dependency/storage'
 
+export const POMODORO_STORAGE_KEY = 'pomodoro-storage'
+
 export interface Time {
   minutes: number
   seconds: number
@@ -35,7 +37,7 @@ class Storage {
   }
 
   private readonly storage = new LocalStorage<StorageData>(
-    'pomodoro-storage',
+    POMODORO_STORAGE_KEY,
     this.initialData
   )
 

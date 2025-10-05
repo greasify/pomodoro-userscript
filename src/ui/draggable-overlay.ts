@@ -1,7 +1,7 @@
 import { el } from '@zero-dependency/dom'
 import { Interact } from '@zero-dependency/interact'
 import { store } from '../libs/storage.js'
-
+import { PomodoroWidget } from './pomodoro-widget.js'
 export class DraggableOverlay {
   el: HTMLElement
 
@@ -9,6 +9,9 @@ export class DraggableOverlay {
 
   mount(target: HTMLElement): void {
     this.el = el('div', { className: 'overlay' }, target)
+
+    const pomodoroWidget = new PomodoroWidget()
+    pomodoroWidget.shadowRoot!.appendChild(this.el)
 
     this.interact = new Interact(target, {
       constrain: true,
@@ -27,7 +30,7 @@ export class DraggableOverlay {
     })
 
     this.updatePosition()
-    document.body.appendChild(this.el)
+    document.body.appendChild(pomodoroWidget)
   }
 
   updatePosition(): void {
